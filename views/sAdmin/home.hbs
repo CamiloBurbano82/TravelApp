@@ -1,0 +1,76 @@
+<div class="container">
+
+  <div class="row">
+
+    <div class="col-lg-12 mb-4">
+      <div class="section_title text-center" style="padding: 20px">
+        <h1>Administración Global</h1>
+      </div>
+    </div>
+
+    <div class="container">
+      <div class="row justify-content-left">
+        <div class="col-lg-6">
+          <div class="section_title text-center">
+            <h4>Estado Administradores</h4>
+          </div>
+
+          <form action="/updActive" method="POST" autocomplete="off">
+            <table class="table">
+              {{#each admins}}
+              <tr>
+                <td>{{name}}</td>
+                <td>
+                  <div class="confirm-switch">
+                    <input type="checkbox" id="confirm-switch{{@index}}" data-id="{{_id}}" name="estado" {{#if active}}
+                      checked {{/if}}>
+                    <label for="confirm-switch{{@index}}"></label>
+                  </div>
+                </td>
+              </tr>
+              {{/each}}
+            </table>
+
+            <div class="form-group mt-3">
+              <input type="hidden" name="_csrf" id="_csrf" value="{{csrfToken}}">
+            </div>
+          </form>
+        </div>
+
+        <div class="col-lg-6">
+          <div class="section_title text-center">
+            <h4>Nuevo administrador</h4>
+          </div>
+
+          <form action="/addAdmin" method="POST" autocomplete="off">
+            <table class="table">
+              <tr>
+                <td>Nombre (Lugar):</td>
+                <td><input class="form-control valid" name="name" id="name" type="text"
+                    placeholder="Nombres del establecimiento..." required />
+                </td>
+              </tr>
+              <tr>
+                <td>Correo</td>
+                <td><input class="form-control valid" name="email" type="email" placeholder="Escribe tu correo"
+                    required /></td>
+              </tr>
+              <tr>
+                <td>contraseña</td>
+                <td><input class="form-control valid" name="password" id="password" type="password"
+                    placeholder="********" required /></td>
+              </tr>
+            </table>
+
+            <div class="form-group mt-3">
+              <input type="hidden" name="_csrf" value="{{csrfToken}}">
+              <button type="submit" class="button button-contactForm boxed-btn">Agregar</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script src="/sAdmin.js"></script>

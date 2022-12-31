@@ -1,0 +1,78 @@
+<div class="section_title text-center mb-5">
+  <h3>Panel Administrador</h3>
+</div>
+
+{{#if userActive}}
+<div class="container">
+  <div class="row justify-content-center">
+    <div class="col-lg-4 mt-4">
+
+      <div class="single_travel text-center">
+        <div class="icon">
+          <img src="img/svg_icon/1a.svg" alt="" width="115" height="115" />
+        </div>
+        <h3>Operador</h3>
+        <p>Aquí puedes modificar las credenciales de tu operador</p>
+
+        <div class="row">
+          <div class="col-lg-12">
+            <div class="more_place_btn text-center">
+              <a class="boxed-btn4" href="/admin/operador">Editar</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-lg-4  mt-4">
+      <div class="single_travel text-center">
+        <div class="icon">
+          <img src="img/svg_icon/2a.svg" alt="" width="115" height="115" />
+        </div>
+        <h3>Actividades</h3>
+        <p>Establece los días de reserva, jornadas de trabajo y la ocupación máxima.</p>
+        <div class="row">
+          <div class="col-lg-12 ">
+            <div class="more_place_btn text-center">
+              <a class="boxed-btn4" href="/admin/actividad">Editar</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-lg-4  mt-4">
+      <div class="single_travel text-center">
+        <div class="icon">
+          <img src="img/svg_icon/3a.svg" alt="" width="115" height="115" />
+        </div>
+        <h3>Ocupación</h3>
+        <p>Modifica el numero máximo de personas que ingresa al sitio</p>
+      </div>
+
+      <form class="form-contact contact_form pt-4">
+        <div class="row">
+          <div class="col-sm-6">
+            <div class="form-group">
+              <input class="form-control valid" name="date" id="date" type="date" placeholder="Ingrese Una Fecha" />
+            </div>
+          </div>
+          <div class="col-sm-3 text-center">
+            <span class="badge badge-success p-3">Ocupación: 50%</span>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+{{else}}
+<div class="container">
+  <div class="row justify-content-center">
+    <div class="col-lg-6 mt-4">
+      <div class="section_title text-center">
+        <h3>Usuario Inactivo, Comuníquese con el administrador!</h3>
+      </div>
+    </div>
+  </div>
+</div>
+{{/if}}
